@@ -37,37 +37,10 @@
             <button mat-raised-button color="primary" (click)="hostHike()" [disabled]="form.invalid">
               Host
             </button>
+            <button mat-raised-button color="warn" [routerLink]="['/home']">
+                Back
+            </button>
           </form>
       </mat-card-content>
     </mat-card>
 </div>
-
-
-
-
-<!-- <form [formGroup]="form">
-    Country: {{hikeSpot.country}}
-    <br>
-    Hike Spot: {{hikeSpot.name}}
-    <br>
-    <label>Date and Time of Hike</label>
-    <input type="datetime-local" formControlName = "dateAndTime"  (change)="generateSunTimings()">
-    <div *ngIf="form.get('dateAndTime')?.hasError('required')">
-        Compulsory
-    </div>
-    <div *ngIf="form.get('dateAndTime')?.hasError('timeStateCheck')">
-        Ensure that the date is in the future
-    </div>
-
-    <br>
-
-    <label>Sun Rise Time</label>
-    <input readonly type="datetime-local" formControlName = "sunriseTime">
-
-    <br>
-
-    <label>Sun Set Time</label>
-    <input readonly type="datetime-local" formControlName = "sunsetTime">
-
-    <button (click)="hostHike()" [disabled]="form.invalid">Submit</button>
-</form> -->

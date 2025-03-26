@@ -81,13 +81,6 @@ export class HosthikeComponent implements OnInit{
     hike.sunsetTime = new Date(this.form.value.sunsetTime)
     hike.usersJoined = [hike.host]
 
-    /* this.hikeService.hostHike(hike).subscribe(
-      (data) => {
-        console.log(data)
-        this.router.navigate(['/hostedhikes'])
-      }
-    ) */
-
     this.store.dispatch(new AddHikes(hike)); //ADD HIKE TO STORE
     this.router.navigate(['/hostedhikes'])
   }

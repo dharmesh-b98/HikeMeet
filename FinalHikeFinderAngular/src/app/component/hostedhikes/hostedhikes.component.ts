@@ -48,24 +48,10 @@ export class HostedhikesComponent implements OnInit{
   }
 
   joinHike(hostedhike_id: number){
-    /* this.hikeService.joinHike(hostedhike_id, this.usernameLoggedIn).subscribe(
-      (data) => {
-        console.log(data)
-        this.loadHikes()
-      }
-    ) */
-
     this.store.dispatch(new UpdateHikesJoin(hostedhike_id, this.usernameLoggedIn));
   }
 
   unjoinHike(hostedhike_id: number){
-    /* this.hikeService.unjoinHike(hostedhike_id, this.usernameLoggedIn).subscribe(
-      (data) => {
-        console.log(data)
-        this.loadHikes()
-      }
-    ) */
-
     this.store.dispatch(new UpdateHikesUnjoin(hostedhike_id, this.usernameLoggedIn));
   }
 

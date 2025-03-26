@@ -11,7 +11,6 @@ import FinalHikeFinder.FinalHikeFinder.model.User;
 import FinalHikeFinder.FinalHikeFinder.service.TeleLogicService;
 import FinalHikeFinder.FinalHikeFinder.service.UserService;
 import jakarta.json.Json;
-import jakarta.json.JsonObjectBuilder;
 
 @RestController
 @RequestMapping("/api/user")

@@ -23,10 +23,6 @@ public class TelegramConfig {
 
     @Bean
     public TelegramBotsApi telegramBotsApi(TelegramBot telegramBot) throws Exception {
-        
-        /* if (registeredBot != null) {
-            registeredBot.destroy();  // Gracefully stop old bot
-        } */
 
         //to register
         try {

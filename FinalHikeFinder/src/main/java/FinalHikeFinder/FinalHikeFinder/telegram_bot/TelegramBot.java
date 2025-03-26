@@ -2,9 +2,7 @@ package FinalHikeFinder.FinalHikeFinder.telegram_bot;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Scope;
-import org.springframework.context.event.ContextClosedEvent;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Message;
@@ -13,10 +11,10 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
 @Scope("singleton")
-public class TelegramBot extends TelegramLongPollingBot implements DisposableBean/* , ApplicationListener<ContextClosedEvent> */{
+public class TelegramBot extends TelegramLongPollingBot implements DisposableBean{
     private volatile boolean isRunning = true; // Track if the bot is running
 
-    @Autowired BotLogic botLogic;//initated a botLogic object, this object will store the state of the botLogic
+    @Autowired BotLogic botLogic;
 
     private final String botName;
 
@@ -37,15 +35,7 @@ public class TelegramBot extends TelegramLongPollingBot implements DisposableBea
                 execute(botLogic.getOutput(message));
             } 
             catch (TelegramApiException e) {
-                
             }
-
-         //   try {
-         //       execute(new SendMessage(chatId.toString(), botLogic.getOutput(messageText)));
-         //   } catch (TelegramApiException e) {
-         //       //e.printStackTrace();
-         //       //can log this instead
-         //   }
         }
     }
 
