@@ -1,0 +1,38 @@
+.register-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+    background: url('/background.jpeg') no-repeat center center;
+    background-size: cover;
+}
+  
+.register-card {
+width: 400px;
+opacity: 0.95; 
+}
+
+.register-field {
+display: block;
+margin-bottom: 16px;
+}
+
+.register-actions {
+display: flex;
+justify-content: space-between;
+margin-top: 16px;
+}
+
+mat-card-title{
+    text-align: center;
+}
+
+p{
+    color: rgb(128, 3, 3);
+    font-size: 14px;
+    display: block;
+    margin:auto;
+    text-align: center;
+}

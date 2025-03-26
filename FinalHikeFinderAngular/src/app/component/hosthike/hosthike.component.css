@@ -1,0 +1,31 @@
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    
+    background: url('/background.jpeg') no-repeat center center;
+    background-size: cover;
+  }
+  
+  .login-card {
+    width: 400px;
+    opacity: 0.95;
+    text-align: center;
+  }
+  
+  .login-field {
+    display: block;
+    margin-bottom: 16px;
+  }
+  
+  .login-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+mat-card-title{
+    text-align: center;
+}

@@ -1,0 +1,84 @@
+
+<!-- <h1>Register</h1>
+<div class="container lg-3">
+    <form method="POST" (ngSubmit)="registerUser()" [formGroup]="form">
+        <div class="mb-3" >
+            <label for="username" class="form-label">Username: </label>
+            <input type="text" id="username" formControlName="username" class="form-control" />
+        </div>
+
+        <div *ngIf="form.get('username')?.hasError('required')">
+            Please enter your username
+        </div>
+        <div *ngIf="form.get('username')?.hasError('minlength') || form.get('username')?.hasError('maxlength')">
+            Username has to be between 5 to 15 characters
+        </div>
+        <div>
+            <p>{{errorMessage}}</p>
+        </div>
+
+
+
+        <div class="mb-3">
+            <label for="password" class="form-label">Password: </label>
+            <input type="text" id="password" formControlName="password" class="form-control" />
+        </div>
+
+        <div *ngIf="form.get('password')?.hasError('required')">
+            Please enter your password
+        </div>
+        <div *ngIf="form.get('password')?.hasError('pattern')">
+            Password needs to be 8 characters with at least one number
+        </div>
+
+        <div class="mb-3">
+            <input type="submit" value="Register" [disabled]="checkFormGroupInvalid()"/>
+        </div>
+    </form>
+</div> -->
+
+
+<div class="register-container">
+    <mat-card class="register-card">
+      <mat-card-title>Register</mat-card-title>
+      
+      <mat-card-content>
+        <form (ngSubmit)="registerUser()" [formGroup]="form">
+          <mat-form-field appearance="fill" class="register-field">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" required />
+          </mat-form-field>
+          <div *ngIf="(form.get('username')?.hasError('minlength') || form.get('username')?.hasError('maxlength')) && form.dirty">
+            <p>Username has to be between 5 to 15 characters</p>
+          </div>
+  
+          <mat-form-field appearance="fill" class="register-field">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" required />
+          </mat-form-field>
+          <div *ngIf="(form.get('password')?.hasError('pattern')) && form.dirty">
+            <p>Password needs to be 8 characters with at least one number</p>
+          </div>
+
+          
+
+          <div class="register-actions">
+
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              [disabled]="checkFormGroupInvalid()"
+            >
+              Register
+            </button>
+
+            <button mat-button [routerLink]="['/']">
+                Back
+            </button>
+                        
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>

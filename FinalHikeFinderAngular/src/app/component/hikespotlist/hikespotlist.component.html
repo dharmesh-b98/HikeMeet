@@ -1,0 +1,139 @@
+<div class="hikespotlist-container">
+  <mat-toolbar class="navbar">
+    <div class="left-section">
+        <img
+          src="/logo.png"
+          alt="HikeMeet Logo"
+          class="logo"
+        />
+    </div>
+    <div class="nav-buttons">
+      <button mat-button [routerLink]="['/hostedhikes']"><i class="bi bi-backpack3-fill"></i> Hosted Hikes</button>
+    </div>
+
+    <span class="spacer"></span>
+
+    <div class="nav-buttons">
+      <button mat-button [routerLink]="['/personalhostedhikes']"><i class="bi bi-person-fill"></i> {{username}}</button>
+      <button mat-button (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</button>
+    </div>
+  </mat-toolbar>
+
+  <h1>Hikes Around the World</h1>
+
+  <div class="select-container">
+    <select id="FilterBy" name="FilterBy" (change)="filterListBy($event)">
+      <option value="All">All</option>
+      <option value="Singapore">Singapore</option>
+      <option value="India">India</option>
+      <option value="Japan">Japan</option>
+    </select>
+  </div>
+
+  <div id="list" class="card mb-3 bg-light">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card-body tableclass">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Country</th>
+                <th scope="col">Name</th>
+                <th scope="col">Host a Hike</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(hikespot of hikespotlist; let idx=$index; track hikespot) {
+                <tr>
+                  <td>{{ hikespot.country }}</td>
+                  <td>{{ hikespot.name }}</td>
+                  <td>
+                    <button (click)="hostHike(hikespot.id)">Host Hike</button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <div class="map-container card-body">
+          <app-hikespotsmap [hikeSpotList]="hikespotlist" [filterBy]="filterBy"></app-hikespotsmap>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div id="list" class="card mb-3 bg-light">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card-body">
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Country</th>
+                  <th scope="col">Name</th>
+                  
+                  <th scope="col">Host a Hike</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for(hikespot of hikespotlist; let idx=$index; track hikespot ){
+                  <tr>
+                      <td>{{hikespot.country}}</td>
+                      <td>{{hikespot.name}}</td>
+                  
+                      <td><button (click)="hostHike(hikespot.id)">Host Hike</button></td>               
+                  </tr>
+                }
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <app-hikespotsmap [hikeSpotList]="hikespotlist" [filterBy]="filterBy"></app-hikespotsmap>
+    </div>
+
+  </div> -->
+
+
+</div>
+
+
+
+
+<!-- <button [routerLink]="['/hostedhikes']">Hosted Hikes</button>
+<button [routerLink]="['/personalhostedhikes']">Personal Hosted Hikes</button>
+<br>
+<button (click)="filterListBy('All')">All</button>
+<button (click)="filterListBy('Singapore')">Singapore</button>
+<button (click)="filterListBy('Japan')">Japan</button>
+<button (click)="filterListBy('India')">India</button>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Country</th>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Host a Hike</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        @for(hikespot of hikespotlist; let idx=$index; track hikespot ){
+            <tr>
+                <td>{{hikespot.country}}</td>
+                <td>{{hikespot.name}}</td>
+                <td>{{hikespot.description}}</td> 
+                <td><button (click)="hostHike(hikespot.id)">Host Hike</button></td>               
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<app-hikespotsmap [hikeSpotList]="hikespotlist" [filterBy]="filterBy"></app-hikespotsmap> -->
+

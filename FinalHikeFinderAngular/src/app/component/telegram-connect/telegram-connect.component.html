@@ -1,0 +1,51 @@
+<div class="hikespotlist-container">
+    <mat-toolbar class="navbar">
+      <div class="left-section">
+          <img
+            src="/logo.png"
+            alt="HikeMeet Logo"
+            class="logo"
+          />
+      </div>
+      <div class="nav-buttons">
+        <button mat-button [routerLink]="['/home']"><i class="bi bi-globe-central-south-asia"></i> Hike Spots</button>
+        <button mat-button [routerLink]="['/hostedhikes']"><i class="bi bi-backpack3-fill"></i> HostedHikes</button>
+      </div>
+  
+      <span class="spacer"></span>
+  
+      <div class="nav-buttons">
+        <button mat-button [routerLink]="['/personalhostedhikes']"><i class="bi bi-person-fill"></i> {{usernameLoggedIn}}</button>
+        <button mat-button (click)="logout()"><i class="bi bi-box-arrow-left"></i> Logout</button>
+      </div>
+    </mat-toolbar>
+  
+    <h1>Connect To Telegram</h1>
+
+    <div id="list" class="card mb-3 bg-light">
+        <br><br><br>
+        <p>
+            Hi There, If you have not set up your HikeFinder Telegram Bot, please follow use the below instructions to do so now. <br>
+            You will only be able to navigate out of this page once you do. Thanks!
+        </p>  
+        <br>
+        <ol>
+            <li>Add hike123bot in your Telegram</li>
+            <li>Follow the instructions in the bot until it requests for an OTP</li>
+            <li>Use the "Generate OTP" button to get an OTP</li>
+            <li>Once connected, you may navigate out of this page!</li>
+        </ol>   
+        <br>
+        
+        <div class="card-body tableclass">
+            <button mat-raised-button color="primary" (click)="getOTP()">
+                Generate OTP
+            </button>
+           @if(uuid){
+                {{uuid}}
+            }
+            <p>Countdown: {{ countdown$ | async }} seconds</p>
+        </div>
+    </div> 
+  
+</div>

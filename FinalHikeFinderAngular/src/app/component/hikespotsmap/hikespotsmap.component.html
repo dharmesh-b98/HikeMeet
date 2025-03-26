@@ -1,0 +1,8 @@
+@if(hikeSpotList){
+    <div class="map-container">
+        <google-map [center]="center" [zoom]="zoom" mapId="fc49d825659237e0" height="700px" width="100%">
+          <map-advanced-marker *ngFor="let marker of markers" [position]="marker.position" [title]="marker.title"></map-advanced-marker>
+        </google-map>
+    </div>
+}
+

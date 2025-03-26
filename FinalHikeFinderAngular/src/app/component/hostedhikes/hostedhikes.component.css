@@ -1,0 +1,55 @@
+.hikespotlist-container{
+    background: url('/background.jpeg');
+    background-size: cover;
+    height: 100%;
+}
+
+.navbar {
+background: rgb(35, 80, 19);
+color: #fff;
+min-height: 100px;
+padding: 0 16px;
+}
+
+.left-section {
+display: flex;
+align-items: center;
+}
+
+
+.logo {
+width: 160px;
+height: 160px;
+object-fit: cover;
+}
+
+/* Push the nav buttons to the right */
+.spacer {
+flex: 1 1 auto;
+}
+
+
+.nav-buttons button {
+margin-left: 8px;
+color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+#list{  
+    text-align: center;
+    width:80%;
+    margin: 0 auto;
+    height:80%;
+}
+
+.tableclass{
+    overflow-y: scroll;
+    height:100%;
+    text-align: center;
+
+    width:100%;
+    margin: 0 auto;
+}
